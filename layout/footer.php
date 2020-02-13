@@ -3,6 +3,7 @@
         setlocale(LC_ALL, "czech.utf8");     
         $datum = strftime("%A %d/%B/%Y");
         //POSLEDNÍ AKTUALIZACE
+        //Zadání není přesně definováno. 
         $pathLastVisit = "./layout/footerLastVisit.txt";
         $fileOld = fopen($pathLastVisit, "r+");
         $fLastVisitSize = filesize($pathLastVisit); 
@@ -26,9 +27,10 @@
         $minutes = gmdate("i", $lastVisitInSec);
         $seconds = gmdate("s", $lastVisitInSec);
 
-        echo "<p>";
-        echo "Dnes je " . $datum . ", čas Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin.";
-        echo "<p>";
+        echo "<p>"
+                ."Dnes je " . $datum . ", čas od Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
+        ."<p>";
+
         // POČET NÁVŠTĚV
         $pathVisits = "./layout/footerVisits.txt";
         $fileFooter = fopen($pathVisits, "r+");

@@ -7,7 +7,13 @@
 
     // ZMĚNA NÁZVU STRÁNKY
     //Zjištění aktuální stránky.
-    $title = $_GET['page'];
+    if(!isSet($_GET['page'])) {
+        $title = "";
+    } 
+    else {
+        $title = $_GET['page'];
+    }
+    
     
     echo "<title>";
 
@@ -63,8 +69,15 @@
 
         //Ověření existující cesty k souboru. Pokud cesta neexistuje, načte se 404.
         if(file_exists($url)) {
+            //Načte soubor za pomocí URL
             include_once($url);
-        } else {
+        } 
+        elseif (!$url) {
+            //Defaultní page
+            include_once("./pages/homePage.php");
+        }
+        else {
+            //Pokud cesta k soboru není nalezena
             include_once("./errors/notFound.php");
         }
 
