@@ -12,9 +12,9 @@
             ."</fieldset>"
         ."</form>";
 
-    //Když je formulář odeslán.
+    //Formulář odeslán.
     if(isset($_POST['submit'])) {
-        // Odstranění nežádoucích věcí z polí. Možné scripty atd. (https://www.w3schools.com/php/php_form_validation.asp)
+        // Odstranění nežádoucích věcí z inputů. Možné scripty atd. (https://www.w3schools.com/php/php_form_validation.asp)
         $name = $email = $comment = "";
 
         function test_input($data) {
@@ -31,15 +31,16 @@
         }
     
         //Získání aktuálního data a zápis do souboru.
-        $date = Date("d. m. Y h:i:s");
+        $date = Date("d. m. Y G:i:s");
+        // "|" oddělaní informace od jednoho uživatele. "#" oddĚlení uživatelů.
         $write = "$date|$name|$email|$comment#";
         fwrite($file, $write);
-        //Vracení se na začátek po psaní do souboru.
+        //Vracení se na začátek.
         rewind($file);        
         }
 
     //Kniha navštěvníků.
-    //Počet zpráv na stránku není omezeno.
+    //Počet zpráv na stránku není omezen.
     $fSize = filesize($path);
     if($fSize > 0) {
         //Načtení všech příspěvků.

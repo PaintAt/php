@@ -1,8 +1,8 @@
 <?php
-        //DATUM
+        //DATUM ------------------------
         setlocale(LC_ALL, "czech.utf8");     
         $datum = strftime("%A %d/%B/%Y");
-        //POSLEDNÍ AKTUALIZACE
+        //POSLEDNÍ AKTUALIZACE ------------------------
         //Zadání není přesně definováno. 
         $pathLastVisit = "./layout/footerLastVisit.txt";
         $fileOld = fopen($pathLastVisit, "r+");
@@ -28,8 +28,7 @@
         $seconds = gmdate("s", $lastVisitInSec);
 
 
-
-        // POČET NÁVŠTĚV
+        // POČET NÁVŠTĚV ------------------------
         $pathVisits = "./layout/footerVisits.txt";
         $fileFooter = fopen($pathVisits, "r+");
         $fVisitsSize = filesize($pathVisits);
@@ -43,10 +42,13 @@
         rewind($fileFooter);
         fwrite($fileFooter, $textFooter);  
         
+        //OUTPUT
         echo "<p>";
-                echo
-                ."Dnes je " . $datum . ", čas od Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
-        ."<p>";
-        echo "Počet návštěv: " . $textFooter;
+                echo "<div class=\"dateAndtime\">"
+                        ."Dnes je " . $datum . ", čas od Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
+                ."</div>";
+                echo "<div class=\"visitors\">"
+                        ."Počet návštěv: " . $textFooter
+                ."</div>";
         echo "</p>";
 ?>
