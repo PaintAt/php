@@ -3,7 +3,7 @@
         setlocale(LC_ALL, "czech.utf8");     
         $datum = strftime("%A %d/%B/%Y");
         //POSLEDNÍ AKTUALIZACE ------------------------
-        //Zadání není přesně definováno. 
+        //Čas, který uběhl od poslední návštěvy.
         $pathLastVisit = "./layout/footerLastVisit.txt";
         $fileOld = fopen($pathLastVisit, "r+");
         $fLastVisitSize = filesize($pathLastVisit); 
@@ -43,12 +43,12 @@
         fwrite($fileFooter, $textFooter);  
         
         //OUTPUT
-        echo "<p>";
+        echo "<footer class=\"footer\">";
                 echo "<div class=\"dateAndtime\">"
                         ."Dnes je " . $datum . ", čas od Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
                 ."</div>";
                 echo "<div class=\"visitors\">"
                         ."Počet návštěv: " . $textFooter
                 ."</div>";
-        echo "</p>";
+        echo "</footer>";
 ?>

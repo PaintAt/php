@@ -68,13 +68,21 @@
 
          //Použité technologie
         echo "<p class=\"checkbox\">";
-        if($html || $css || $php || $js || $sql || $other) {
-            echo "$html <br />";
-            echo "$css <br />";
-            echo "$php <br />";
-            echo "$js <br />";
-            echo "$sql <br />";
-            echo " $otherText";
+        echo "Použité technologie: <br />";
+
+        function techIsSet($technology) {
+            if($technology) {
+                echo $technology . "<br />";
+            }
+        }
+
+        if($html || $css || $php || $js || $sql || $otherText) {
+            techIsSet($html);
+            techIsSet($css);
+            techIsSet($php);
+            techIsSet($js);
+            techIsSet($sql);
+            techIsSet($otherText);           
         } 
         else {
             echo "Žádné";
