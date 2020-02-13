@@ -27,9 +27,7 @@
         $minutes = gmdate("i", $lastVisitInSec);
         $seconds = gmdate("s", $lastVisitInSec);
 
-        echo "<p>"
-                ."Dnes je " . $datum . ", čas od Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
-        ."<p>";
+
 
         // POČET NÁVŠTĚV
         $pathVisits = "./layout/footerVisits.txt";
@@ -45,6 +43,10 @@
         rewind($fileFooter);
         fwrite($fileFooter, $textFooter);  
         
-        
+        echo "<p>";
+                echo
+                ."Dnes je " . $datum . ", čas od Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
+        ."<p>";
         echo "Počet návštěv: " . $textFooter;
+        echo "</p>";
 ?>
