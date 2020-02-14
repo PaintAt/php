@@ -32,17 +32,17 @@
         case "roles":
             echo "Role";
             break;
-        case "gameModes":
-            echo "Herní módy";
+        case "info":
+            echo "Informace";
             break;
-        case "coven":
-            echo "Coven expanze";
+        case "galery":
+            echo "Galerie";
             break;
         case "visitingBook":
             echo "Kniha návštěv";
             break;
         default:
-            echo "Town of Salem"; 
+            echo "Berlin"; 
             break;
     }
 
@@ -50,9 +50,10 @@
     ?>  
 </head>
 <body>
+    
     <?php
-        include_once("./layout/menu.php");
         include_once("./layout/header.php");
+        include_once("./layout/menu.php");
 
         // NAČÍTÁNÍ STRÁNKY Z URL
         $url = '';
@@ -68,6 +69,7 @@
             $url .= $_GET['page'] . '.php';
         }
 
+        echo "<main class=\"main\">";
         //Ověření existující cesty k souboru. Pokud cesta neexistuje, načte se 404.
         if(file_exists($url)) {
             //Načte soubor za pomocí URL
@@ -81,6 +83,7 @@
             //Pokud cesta k soboru není nalezena
             include_once("./errors/notFound.php");
         }
+        echo "</main>";
 
         echo "<br/>";
         include_once("./layout/footer.php");

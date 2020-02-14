@@ -1,23 +1,121 @@
 html, body {
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     margin: 0;
     padding: 0;
+    padding-bottom: 80px;
 }
 body {
-    background-color: lightpink;
+    background-color: #F8F8F8;   
+    height: 100%;   
 }
 .header {
-    background-color: blue;
-}
-.footer {
-    background-color: green;
-    width: inherit;
-    position: absolute;
-    left: 0;    
+    background-image: url("./img/header_2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    height: 200px;
     bottom: 0;
-}
-.menu {
-    background-color: red;
     text-align: center;
 }
+/* Název webu */
+.headerName {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    /* visibility: hidden; */
+}
+.menu {
+    background-color: #004179;
+    padding: 1.5% 0px;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.linkMenu {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color:#F8F8F8;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+}
+.linkMenu:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #F8F8F8;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.linkMenu:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+.linkRegistration {
+    width: 100%;
+    display: block;
+}
+/* Aktivní soubor*/
+.active {
+    background-color: #0059aa;
+    border-radius: 10px 10px 0 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color:#F8F8F8;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+}
+.active:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #F8F8F8;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.active:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+.main {
+    background: #FFFFFF;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px 1px rgb(168, 168, 168);
+    margin: auto;
+    padding: 30px;
+    width: 80%;   
+}
+.footer {
+    background-color: #004179;
+    bottom: 0;
+    height: 140px;
+    left: 0;
+    position: fixed;
+    width: inherit;
+}
+.dateAndTime {
+    
+}
+.visitors {
+
+}
+.resources {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/* Color palette blue: #004179 dark blue: #131116 white #F8F8F8*/

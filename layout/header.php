@@ -1,5 +1,7 @@
 <?php
         echo "<header class=\"header\">"
-                ."<img src=\"./img/header_tos.png\">"
+                ."<div class=\"headerName\">"
+                        ."Berlín" // Název webu;
+                ."</div>"
         ."</header>";
 ?>

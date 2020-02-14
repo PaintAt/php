@@ -2,6 +2,7 @@
     $path = "./visitors/visitingBook.txt";
     $file = fopen($path, "a+");
 
+    echo "<h1> KNIHA NÁVŠTĚV </h1>";
     echo "<form method=\"POST\">"
             ."<fieldset>"
                 ."<legend> Vyplňte všechny údaje </legend>"

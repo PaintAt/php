@@ -45,27 +45,27 @@
 
         if($gender == "žena") {
             $author = "Autorka ";
-        }
+        } 
         else {
             $author = "Autor ";
         }
 
         $author .= "webu: $firstName $familyName";
-
         echo "<p class=\"author\">"
                 ."$author"
             ."</p>";
 
         //Hodnocení webu
         echo "<p class=\"rating\">";
+
         if($rating == "ujde") {
             echo "Tento web $rating.";
         }
         else {
-            echo "Tento web je $rating.";
+            echo "Tento web je $rating."; 
         }
-        echo "</p>";
 
+        echo "</p>";
          //Použité technologie
         echo "<p class=\"checkbox\">";
         echo "Použité technologie: <br />";
@@ -87,6 +87,7 @@
         else {
             echo "Žádné";
         }
+
         echo "</p>";
     }
     else {
