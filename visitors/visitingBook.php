@@ -8,7 +8,7 @@
                 ."<legend> Vyplňte všechny údaje </legend>"
                 ."<label for=\"name\"> Vaše jméno: </label> <input type=\"text\" name=\"name\" id=\"name\" size=\"25\" /> <br /> <br />"
                 ."<label for=\"email\"> Váš e-mail: </label> <input type=\"email\" name=\"email\" id=\"email\" size=\"25\" /> <br /> <br /> <br />"
-                ."<label for=\"textArea\"> Vaše zpráva: <br /> </label> <textarea cols=\"140\" rows=\"10\" name=\"comment\" id=\"textArea\"> </textarea> <br /> <br /> <br />"
+                ."<label for=\"textArea\"> Vaše zpráva: <br /> </label> <textarea style=\" width: 99%\" rows=\"10\" name=\"comment\" id=\"textArea\"> </textarea> <br /> <br /> <br />"
                 ."<input type=\"submit\" value=\"Odeslat\" name=\"submit\"/>"
             ."</fieldset>"
         ."</form>";

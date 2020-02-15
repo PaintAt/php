@@ -1,6 +1,6 @@
 <?php
         //DATUM ------------------------
-        setlocale(LC_ALL, "czech.utf8");     
+        setlocale(LC_ALL, "czech.utf8");
         $date = strftime("%A %d/%B/%Y");
         //POSLEDNÍ AKTUALIZACE ------------------------
         //Čas, kdy byl posledně navštíven web uživatelem. (ten před aktuální návštěvou)
@@ -20,7 +20,7 @@
         //Zápis času, kdy uživatel přišel na web.
         fwrite($fileOld, $currentTime);
         //Převod sekund na formát Hodiny
-        $hours = gmdate("G", $timeOld);
+        $hours = gmdate("G", $timeOld) + 1;
         $minutes = gmdate("i", $timeOld);
         $seconds = gmdate("s", $timeOld);
 
@@ -42,7 +42,7 @@
         $resourcesArr = ["w3schools.com"=>"w3schools",];
         //OUTPUT
         echo "<footer class=\"footer\">";
-                echo "<div class=\"author\"> Kevin Grossmann </div>";
+                echo "<div class=\"webAuthor\"> Kevin Grossmann </div>";
                 echo "<div class=\"dateAndTime\">"      
                         ."Dnes je " . $date . ", čas Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
                 ."</div>";

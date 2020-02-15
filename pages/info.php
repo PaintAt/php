@@ -1,3 +1,11 @@
 <?php
-    echo "test123";
-?>
+    echo "<div"
+        ."<table>"
+            ."<tr>"
+                ."<th> Berlin </th>"
+            ."</tr>"
+            ."<tr>"
+                ."<th> Berlin </th>"
+            ."</tr>"
+        ."</table>"
+    ."</div>";
