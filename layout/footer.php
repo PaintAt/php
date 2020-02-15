@@ -42,6 +42,7 @@
         $resourcesArr = ["w3schools.com"=>"w3schools",];
         //OUTPUT
         echo "<footer class=\"footer\">";
+                echo "<div class=\"author\"> Kevin Grossmann </div>";
                 echo "<div class=\"dateAndTime\">"      
                         ."Dnes je " . $date . ", čas Vaší poslední návštěvy či aktualizace je $hours hodin $minutes minut $seconds vteřin."
                 ."</div>";

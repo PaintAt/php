@@ -16,17 +16,23 @@
        ."<div class=\"subMenu\">";
         foreach($rootDirectory as $folder => $pages) {
             foreach($pages as $file => $page) {
-                if($_GET["page"] == $file) {
-                    echo "<a href=\"?category=$folder&page=$file\" class=\"active\"> $page </a>";
-                }
-                else {
-                    echo "<a href=\"?category=$folder&page=$file\" class=\"linkMenu\"> $page </a>";
-                }
+                activePage($folder, $file, $page);
             }
         }
-    echo "</div>";
-    echo "<div class=\"registrationMenu\">"
-            ."<a href=\"?category=visitors&page=registration\"  class=\"linkRegistration\"> Registrace </a>"
-        ."</div>"
+    echo "</div>"
+        ."<div class=\"registrationMenu\">";
+            activePage("visitors", "registration", "Registrace");
+        echo" </div>"
     ."</nav>";
+
+    /* Aktivní stránce přiděl class="active"; */
+    function activePage($folder, $file, $page) {
+        $urlPath = isSet($_GET["page"]) ? $_GET["page"] : "";        
+        if($urlPath == $file) {
+            echo "<a href=\"?category=$folder&page=$file\" class=\"active\"> $page </a>";
+        }
+        else {
+            echo "<a href=\"?category=$folder&page=$file\" class=\"linkMenu\"> $page </a>";
+        }
+    }
 ?>
