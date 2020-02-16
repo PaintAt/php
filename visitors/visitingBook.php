@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('Europe/Prague'); 
     $path = "./visitors/visitingBook.txt";
     $file = fopen($path, "a+");
 
@@ -6,9 +7,9 @@
     echo "<form method=\"POST\">"
             ."<fieldset>"
                 ."<legend> Vyplňte všechny údaje </legend>"
-                ."<label for=\"name\"> Vaše jméno: </label> <input type=\"text\" name=\"name\" id=\"name\" size=\"25\" /> <br /> <br />"
-                ."<label for=\"email\"> Váš e-mail: </label> <input type=\"email\" name=\"email\" id=\"email\" size=\"25\" /> <br /> <br /> <br />"
-                ."<label for=\"textArea\"> Vaše zpráva: <br /> </label> <textarea style=\" width: 99%\" rows=\"10\" name=\"comment\" id=\"textArea\"> </textarea> <br /> <br /> <br />"
+                ."<label for=\"name\"> Vaše jméno: </label> <input type=\"text\" name=\"name\" id=\"name\" size=\"25\" required/> <br /> <br />"
+                ."<label for=\"email\"> Váš e-mail: </label> <input type=\"email\" name=\"email\" id=\"email\" size=\"25\" required/> <br /> <br /> <br />"
+                ."<label for=\"textArea\"> Vaše zpráva: <br /> </label> <textarea style=\" width: 99%\" rows=\"10\" name=\"comment\" id=\"textArea\" required></textarea> <br /> <br /> <br />"
                 ."<input type=\"submit\" value=\"Odeslat\" name=\"submit\"/>"
             ."</fieldset>"
         ."</form>";
@@ -52,11 +53,12 @@
         for($i = count($users) - 1; $i >= 0; $i--) {
             //Rozdělení příspěvků uživatele na samostatné informace. (Datum a čas, Jméno, Email a Zprávu)
             $user = explode('|', $users[$i]);
-            echo "<p>";
-            echo "Datum a čas: $user[0] <br />"
-            ."Navštěvník: $user[1] <br />"
-            ."E-mail: $user[2] <br />"
-            ."Zpráva: $user[3]";
+            echo "<p class=\"userPost\">";
+                echo "<span class=\"parameters\">Datum a čas:</span> $user[0] <br />"
+                ."<span class=\"parameters\">Navštěvník:</span> $user[1] <br />"
+                ."<span class=\"parameters\">E-mail:</span> <a href=\"mailto:$user[2]\">$user[2]</a> <br />"
+                ."<span class=\"parameters\">Zpráva:</span> $user[3]";
+                echo "<hr class=\"postHr\">";
             echo "</p>";
         }
     }

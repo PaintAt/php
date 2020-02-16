@@ -3,9 +3,9 @@
         "pages" => [
             "homePage" => "Domovská stránka",
             "galery" => "Galerie",
-            "info" => "Informace",
-            "howToPlay" => "Jak hrát",
-            "roles" => "Role"
+            "video" => "Video prohlídka",
+            "germany" => "Německo",
+            "history" => "Historie Německa"
         ],
         "visitors" => [
             "visitingBook" => "Kniha navštěv"

@@ -110,6 +110,20 @@ body {
     width: 100%;
     margin: 10px 0;
 }
+.userPost {
+    background-color: #002647;
+    color: #c9c9c9;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: -8px;
+}
+.postHr {
+    border: 3px solid #480350;
+}
+.parameters {
+    color: #F8F8F8;
+    font-weight: bold;
+}
 .footer {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #002647;
@@ -137,7 +151,8 @@ body {
     flex-direction: row;
     justify-content: center;
 }
+.notFound {
+    text-align: center;
+    font-size: 200%;
+}
 
-
-
-/* Color palette blue: #004179 dark blue: #131116 white #F8F8F8*/
