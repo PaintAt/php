@@ -62,6 +62,10 @@ body {
     width: 100%;
     display: block;
 }
+.registrationMenu {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
 /* Aktivní soubor*/
 .active {
     background-color: #0059aa;

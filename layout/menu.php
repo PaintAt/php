@@ -19,10 +19,10 @@
                 activePage($folder, $file, $page);
             }
         }
-    echo "</div>"
-        ."<div class=\"registrationMenu\">";
+        echo"<div class=\"registrationMenu\">";
             activePage("visitors", "registration", "Registrace");
-        echo" </div>"
+        echo" </div>";
+    echo "</div>"
     ."</nav>";
 
     /* Aktivní stránce přiděl class="active"; */
